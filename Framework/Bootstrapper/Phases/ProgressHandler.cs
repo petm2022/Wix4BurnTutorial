@@ -1,7 +1,7 @@
 ﻿using Bootstrapper.Models;
 using Bootstrapper.Models.State;
 using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {

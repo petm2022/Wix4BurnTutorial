@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Models
 {
@@ -150,7 +150,7 @@ namespace Bootstrapper.Models
         }
       }
 
-      if (!string.IsNullOrEmpty(state.RelatedBundleId))
+      if (!string.IsNullOrEmpty(state.RelatedBundleCode))
       {
         var fileName = EmbeddedLogFileName();
         if (!string.IsNullOrEmpty(fileName) && File.Exists(fileName))

@@ -1,18 +1,30 @@
 using Bootstrapper.Models;
 using Bootstrapper.Models.Util;
 using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper
 {
   internal class BootstrapperApp : BootstrapperApplication
   {
-    private readonly Model _model;
+    private Model _model;
+    public int ExitCode { get; private set; }
 
-    public BootstrapperApp(Model model)
-      : base(model.Engine)
+    protected override void OnCreate(CreateEventArgs args)
     {
-      _model = model;
+        base.OnCreate(args);
+
+        try
+        {
+            var factory = new WpfBaFactory();
+            _model = factory.Create(this, args.Engine, args.Command);
+        }
+        catch (Exception ex)
+        {
+            ExitCode = ErrorHelper.HResultToWin32(ex.HResult);
+            args.Engine.Log(LogLevel.Error, ex.ToString());
+            throw;
+        }
     }
 
     protected override void Run()

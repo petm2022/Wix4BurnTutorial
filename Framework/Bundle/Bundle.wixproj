@@ -1,13 +1,14 @@
-﻿<Project Sdk="WixToolset.Sdk/4.0.5">
+﻿<Project Sdk="WixToolset.Sdk/7.0.0">
   
   <PropertyGroup>
     <OutputType>Bundle</OutputType>
     <Platforms>x64</Platforms>
     <InstallerPlatform>x64</InstallerPlatform>
+    <AcceptEula>wix7</AcceptEula>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="WixToolset.Bal.wixext" Version="4.*" />
+    <PackageReference Include="WixToolset.BootstrapperApplications.wixext" Version="7.*" />
   </ItemGroup>
   
   <ItemGroup>

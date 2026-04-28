@@ -3,7 +3,7 @@ using Bootstrapper.Models.Util;
 using System;
 using System.Linq;
 using System.Windows;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {
@@ -176,23 +176,6 @@ namespace Bootstrapper.Phases
     /// <param name="sender"></param>
     /// <param name="e"></param>
     public virtual void OnExecuteProgress(object sender, ExecuteProgressEventArgs e)
-    { }
-
-    /// <summary>
-    ///   Fired when the engine has begun to set up the update package.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    public virtual void OnSetUpdateBegin(object sender, SetUpdateBeginEventArgs e)
-    { }
-
-    /// <summary>
-    ///   Fired when the engine has completed setting up the update package.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    /// <exception cref="PhaseException"></exception>
-    public virtual void OnSetUpdateComplete(object sender, SetUpdateCompleteEventArgs e)
     { }
 
     /// <summary>

@@ -2,7 +2,7 @@
 using Bootstrapper.Models.Util;
 using System;
 using System.Linq;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {
@@ -154,55 +154,6 @@ namespace Bootstrapper.Phases
 
         _logger.Write($"{nameof(e.HResult)} = {ErrorHelper.HResultToMessage(e.HResult)}", true);
         _logger.Write($"{nameof(ApplyPhase)}: {nameof(OnExecuteProgress)} -------^");
-      }
-      catch (PhaseException)
-      {
-        throw;
-      }
-      catch (Exception ex)
-      {
-        _logger.Write(ex);
-        throw new PhaseException(ex);
-      }
-    }
-
-    /// <inheritdoc />
-    public override void OnSetUpdateBegin(object sender, SetUpdateBeginEventArgs e)
-    {
-      try
-      {
-        _logger.Write($"{nameof(ApplyPhase)}: {nameof(OnSetUpdateBegin)} -------v");
-
-        base.OnSetUpdateBegin(sender, e);
-
-        _logger.Write($"{nameof(e.HResult)} = {ErrorHelper.HResultToMessage(e.HResult)}", true);
-        _logger.Write($"{nameof(ApplyPhase)}: {nameof(OnSetUpdateBegin)} -------^");
-      }
-      catch (PhaseException)
-      {
-        throw;
-      }
-      catch (Exception ex)
-      {
-        _logger.Write(ex);
-        throw new PhaseException(ex);
-      }
-    }
-
-    /// <inheritdoc />
-    public override void OnSetUpdateComplete(object sender, SetUpdateCompleteEventArgs e)
-    {
-      try
-      {
-        _logger.Write($"{nameof(ApplyPhase)}: {nameof(OnSetUpdateComplete)} -------v");
-        _logger.Write($"{nameof(e.Status)} = {ErrorHelper.HResultToMessage(e.Status)}", true);
-        _logger.Write($"{nameof(e.PreviousPackageId)} = {e.PreviousPackageId}", true);
-        _logger.Write($"{nameof(e.NewPackageId)} = {e.NewPackageId}", true);
-
-        base.OnSetUpdateComplete(sender, e);
-
-        _logger.Write($"{nameof(e.HResult)} = {ErrorHelper.HResultToMessage(e.HResult)}", true);
-        _logger.Write($"{nameof(ApplyPhase)}: {nameof(OnSetUpdateComplete)} -------^");
       }
       catch (PhaseException)
       {

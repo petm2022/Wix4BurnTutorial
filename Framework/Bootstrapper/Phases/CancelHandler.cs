@@ -1,5 +1,5 @@
 ﻿using Bootstrapper.Models;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {

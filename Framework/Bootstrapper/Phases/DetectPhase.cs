@@ -1,7 +1,7 @@
 ﻿using Bootstrapper.Models;
 using Bootstrapper.Models.Util;
 using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {
@@ -98,8 +98,8 @@ namespace Bootstrapper.Phases
 
         if (!_model.State.Bundle.Packages.ContainsKey(e.ProductCode))
         {
-          var package = _model.State.Bundle.AddRelatedBundleAsPackage(e);
-          _model.State.RelatedBundleId = package.Id;
+          var package = _model.State.Bundle.AddRelatedBundleAsPackage(e.ProductCode, e.RelationType, e.PerMachine, e.Version);
+          _model.State.RelatedBundleCode = package.Id;
           if (_model.Engine.ContainsVariable(Constants.BundleNameVariable))
           {
             var name = _model.Engine.GetVariableString(Constants.BundleNameVariable);

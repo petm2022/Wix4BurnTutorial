@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 using System.Threading;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Models.State
 {
@@ -16,7 +16,7 @@ namespace Bootstrapper.Models.State
     private long _baStatus;
     private long _plannedAction;
     private long _relatedBundleStatus;
-    private string _relatedBundleId;
+    private string _relatedBundleCode;
     private string _relatedBundleVersion;
     private long _phaseResult;
     private string _errorMessage;
@@ -63,17 +63,17 @@ namespace Bootstrapper.Models.State
     ///   Package ID of the bundle that was discovered during the detection phase.
     ///   Will be <see langword="null" /> if not installed.
     /// </summary>
-    public string RelatedBundleId
+    public string RelatedBundleCode
     {
       get
       {
         lock (_lock)
-          return _relatedBundleId;
+          return _relatedBundleCode;
       }
       set
       {
         lock (_lock)
-          _relatedBundleId = value;
+          _relatedBundleCode = value;
       }
     }
 
@@ -171,7 +171,7 @@ namespace Bootstrapper.Models.State
     {
       var packageName = string.Empty;
 
-      if (packageId == RelatedBundleId)
+      if (packageId == RelatedBundleCode)
         packageName = RelatedBundleName;
       else if (Bundle.Packages.TryGetValue(packageId, out var package) && !string.IsNullOrWhiteSpace(package.DisplayName))
         packageName = package.DisplayName;

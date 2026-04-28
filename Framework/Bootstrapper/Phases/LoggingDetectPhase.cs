@@ -1,7 +1,7 @@
 ﻿using Bootstrapper.Models;
 using Bootstrapper.Models.Util;
 using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {
@@ -281,7 +281,7 @@ namespace Bootstrapper.Phases
       try
       {
         _logger.Write($"{nameof(DetectPhase)}: {nameof(OnDetectForwardCompatibleBundle)} -------v");
-        _logger.Write($"{nameof(e.BundleId)} = {e.BundleId}", true);
+        _logger.Write($"{nameof(e.BundleCode)} = {e.BundleCode}", true);
         _logger.Write($"{nameof(e.Version)} = {e.Version}", true);
         _logger.Write($"{nameof(e.BundleTag)} = {e.BundleTag}", true);
         _logger.Write($"{nameof(e.PerMachine)} = {e.PerMachine}", true);

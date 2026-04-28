@@ -1,7 +1,7 @@
 ﻿using Bootstrapper.Models;
 using Bootstrapper.Models.Util;
 using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Phases
 {
@@ -208,7 +208,7 @@ namespace Bootstrapper.Phases
       try
       {
         _logger.Write($"{nameof(PlanPhase)}: {nameof(OnPlanRelatedBundle)} -------v");
-        _logger.Write($"{nameof(e.BundleId)} = {e.BundleId}", true);
+        _logger.Write($"{nameof(e.BundleCode)} = {e.BundleCode}", true);
         _logger.Write($"{nameof(e.RecommendedState)} = {e.RecommendedState}", true);
 
         base.OnPlanRelatedBundle(sender, e);
@@ -234,7 +234,7 @@ namespace Bootstrapper.Phases
       try
       {
         _logger.Write($"{nameof(PlanPhase)}: {nameof(OnPlanRelatedBundleType)} -------v");
-        _logger.Write($"{nameof(e.BundleId)} = {e.BundleId}", true);
+        _logger.Write($"{nameof(e.BundleCode)} = {e.BundleCode}", true);
         _logger.Write($"{nameof(e.RecommendedType)} = {e.RecommendedType}", true);
 
         base.OnPlanRelatedBundleType(sender, e);
@@ -260,7 +260,7 @@ namespace Bootstrapper.Phases
       try
       {
         _logger.Write($"{nameof(PlanPhase)}: {nameof(OnPlanRestoreRelatedBundle)} -------v");
-        _logger.Write($"{nameof(e.BundleId)} = {e.BundleId}", true);
+        _logger.Write($"{nameof(e.BundleCode)} = {e.BundleCode}", true);
         _logger.Write($"{nameof(e.RecommendedState)} = {e.RecommendedState}", true);
 
         base.OnPlanRestoreRelatedBundle(sender, e);
@@ -286,7 +286,7 @@ namespace Bootstrapper.Phases
       try
       {
         _logger.Write($"{nameof(PlanPhase)}: {nameof(OnPlanForwardCompatibleBundle)} -------v");
-        _logger.Write($"{nameof(e.BundleId)} = {e.BundleId}", true);
+        _logger.Write($"{nameof(e.BundleCode)} = {e.BundleCode}", true);
         _logger.Write($"{nameof(e.Version)} = {e.Version}", true);
         _logger.Write($"{nameof(e.PerMachine)} = {e.PerMachine}", true);
         _logger.Write($"{nameof(e.RelationType)} = {e.RelationType}", true);

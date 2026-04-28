@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <Platforms>x64</Platforms>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <DebugType>embedded</DebugType>
+    <AcceptEula>wix7</AcceptEula>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WixToolset.Mba.Core" Version="4.*" />
+    <PackageReference Include="WixToolset.BootstrapperApplicationApi" Version="7.*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,12 +23,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="WixToolset.Mba.Host.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

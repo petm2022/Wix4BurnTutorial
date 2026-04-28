@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Models
 {
@@ -57,7 +57,7 @@ namespace Bootstrapper.Models
       State.PlannedAction = action;
       State.BaStatus = BaStatus.Planning;
       State.CancelRequested = false;
-      Engine.Plan(action);
+      Engine.Plan(action, BundleScope.PerMachine);
     }
 
     /// <summary>

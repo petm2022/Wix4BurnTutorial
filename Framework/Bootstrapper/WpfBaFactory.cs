@@ -1,22 +1,18 @@
-﻿using Bootstrapper;
-using Bootstrapper.Models;
+﻿using Bootstrapper.Models;
 using Bootstrapper.Phases;
 using System;
-using WixToolset.Mba.Core;
-
-[assembly: BootstrapperApplicationFactory(typeof(WpfBaFactory))]
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper
 {
-  public class WpfBaFactory : BaseBootstrapperApplicationFactory
-  {
-    protected override IBootstrapperApplication Create(IEngine engine, IBootstrapperCommand commandInfo)
+internal class WpfBaFactory
+{
+public Model Create(IDefaultBootstrapperApplication ba, IEngine engine, IBootstrapperCommand commandInfo)
+{
+    try
     {
-      try
-      {
         var uiFacade = new WpfFacade(new Log(engine), commandInfo.Display);
         var model = new Model(engine, commandInfo, uiFacade);
-        var ba = new BootstrapperApp(model);
 
         SubscribeCancelEvents(ba, model);
         SubscribeProgressEvents(ba, model);
@@ -27,7 +23,7 @@ namespace Bootstrapper
 
         model.Log.RemoveEmbeddedLog();
 
-        return ba;
+        return model;
       }
       catch (Exception ex)
       {
@@ -120,8 +116,6 @@ namespace Bootstrapper
       ba.ApplyDowngrade += applyPhase.OnApplyDowngrade;
       ba.ExecuteBegin += applyPhase.OnExecuteBegin;
       ba.ExecuteComplete += applyPhase.OnExecuteComplete;
-      ba.SetUpdateBegin += applyPhase.OnSetUpdateBegin;
-      ba.SetUpdateComplete += applyPhase.OnSetUpdateComplete;
       ba.ElevateBegin += applyPhase.OnElevateBegin;
       ba.ElevateComplete += applyPhase.OnElevateComplete;
       ba.ExecutePatchTarget += applyPhase.OnExecutePatchTarget;

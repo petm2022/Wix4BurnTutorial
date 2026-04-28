@@ -5,7 +5,7 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.ViewModels
 {

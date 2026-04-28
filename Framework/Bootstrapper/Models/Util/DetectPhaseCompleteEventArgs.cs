@@ -1,5 +1,5 @@
 ﻿using System;
-using WixToolset.Mba.Core;
+using WixToolset.BootstrapperApplicationApi;
 
 namespace Bootstrapper.Models.Util
 {
