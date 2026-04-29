@@ -21,7 +21,7 @@
     <Log Prefix =".\$(var.ProductName)_$(var.ProductVersion)" Extension="log" />
     <Variable Name="SampleOption" Type="string" Value="" />
 
-    <Chain>
+    <Chain ParallelCache="no">
       <MsiPackage
         Id                = "HW.Install"
         SourceFile        = "..\..\Assets\HelloWorldPackage.msi"

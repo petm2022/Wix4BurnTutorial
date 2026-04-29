@@ -389,7 +389,9 @@ namespace Bootstrapper.Phases
     /// <param name="sender"></param>
     /// <param name="e"></param>
     public virtual void OnCacheVerifyProgress(object sender, CacheVerifyProgressEventArgs e)
-    { }
+    {
+        //e.Cancel = true;
+    }
 
     /// <summary>
     ///   Fired when the engine has begun installing a specific package.
