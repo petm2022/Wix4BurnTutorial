@@ -13,26 +13,27 @@
     IconSourceFile = "..\..\Assets\Icon.ico"
     >
 
+    <Variable Name="InstallFolder" Type="formatted" Persisted="yes" Value="[ProgramFilesFolder]$(var.Manufacturer)\$(var.ProductName)" />
+
     <BootstrapperApplication SourceFile="$(var.Bootstrapper.TargetFileName)">
       <Payload SourceFile="!(bindpath.Bootstrapper)\mbanative.dll"/>
       <Payload SourceFile="!(bindpath.Bootstrapper)\WixToolset.BootstrapperApplicationApi.dll" />
     </BootstrapperApplication>
 
     <Log Prefix =".\$(var.ProductName)_$(var.ProductVersion)" Extension="log" />
-    <Variable Name="SampleOption" Type="string" Value="" />
 
-    <Chain ParallelCache="no">
-      <MsiPackage
-        Id                = "HW.Install"
-        SourceFile        = "..\..\Assets\HelloWorldPackage.msi"
-        Visible           = "no"
-        Compressed        = "no"
-        DisplayName       = "$(var.ProductName)"
-        Description       = "Demo app"
-        Vital             = "yes"
-        bal:PrereqPackage = "yes"
-        >
-        <MsiProperty Name='SAMPLE' Value='[SampleOption]'/>
+    <Chain>
+      <MsiPackage Compressed="no" SourceFile="MsiPackage1.msi" Vital="yes">
+        <MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]" />
+      </MsiPackage>
+      <MsiPackage Compressed="no" SourceFile="MsiPackage2.msi" Vital="no">
+        <MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]" />
+      </MsiPackage>
+      <MsiPackage Compressed="no" SourceFile="MsiPackage3.msi" Vital="no">
+        <MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]" />
+      </MsiPackage>
+      <MsiPackage Compressed="no" SourceFile="MsiPackage4.msi" Vital="no">
+        <MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]" />
       </MsiPackage>
     </Chain>
 

@@ -7,7 +7,6 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <AcceptEula>wix7</AcceptEula>
   </PropertyGroup>
 
   <ItemGroup>

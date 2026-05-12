@@ -4,7 +4,6 @@
     <OutputType>Bundle</OutputType>
     <Platforms>x64</Platforms>
     <InstallerPlatform>x64</InstallerPlatform>
-    <AcceptEula>wix7</AcceptEula>
   </PropertyGroup>
   
   <ItemGroup>
@@ -13,6 +12,10 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Bootstrapper\Bootstrapper.csproj" />
+    <ProjectReference Include="..\MsiPackage1\MsiPackage1.wixproj" />
+    <ProjectReference Include="..\MsiPackage2\MsiPackage2.wixproj" />
+    <ProjectReference Include="..\MsiPackage3\MsiPackage3.wixproj" />
+    <ProjectReference Include="..\MsiPackage4\MsiPackage4.wixproj" />
   </ItemGroup>
   
 </Project>

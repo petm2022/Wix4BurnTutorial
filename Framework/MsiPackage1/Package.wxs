@@ -1,0 +1,6 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="MsiPackage1" Manufacturer="ACME" Version="1.0.0.0" UpgradeCode="{A5230DF1-DABE-4C34-9CCF-15912BB62539}">
+    <MediaTemplate EmbedCab="yes"/>
+    <Files Directory="INSTALLFOLDER" Subdirectory="Data1" Include="..\Data\**\*.*" />
+  </Package>
+</Wix>

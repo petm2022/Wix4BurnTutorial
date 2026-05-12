@@ -1,0 +1,14 @@
+﻿<Project Sdk="WixToolset.Sdk/7.0.0">
+  <ItemGroup>
+  </ItemGroup>
+
+  <!-- Target to create random files before build -->
+  <!--<Target Name="CreateRandomFiles" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <PowerShellScriptPath>$(MSBuildProjectDirectory)\Data\CreateRandom.ps1</PowerShellScriptPath>
+    </PropertyGroup>
+
+    --><!-- Execute PowerShell script file --><!--
+    <Exec Command="pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$(PowerShellScriptPath)&quot;" WorkingDirectory="$(MSBuildProjectDirectory)\Data" />
+  </Target>-->
+</Project>

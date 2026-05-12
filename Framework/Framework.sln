@@ -1,16 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34511.84
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{08FD7EB7-BF1D-4231-A991-CCB5682512F2}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
 		sandbox.wsb = sandbox.wsb
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrapper", "Bootstrapper\Bootstrapper.csproj", "{DC0A1E2E-5709-4006-985B-FE033107E068}"
 EndProject
 Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "Bundle", "Bundle\Bundle.wixproj", "{0E5BF176-18FE-4282-8B4B-815EFA2233ED}"
+EndProject
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "MsiPackage3", "MsiPackage3\MsiPackage3.wixproj", "{239F81C6-B628-70B8-D333-7F4C350BCA8C}"
+EndProject
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "MsiPackage2", "MsiPackage2\MsiPackage2.wixproj", "{319DCAC2-5425-BBD7-2486-1AC1F72CE3E4}"
+EndProject
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "MsiPackage1", "MsiPackage1\MsiPackage1.wixproj", "{FE377B5F-B56B-92AD-8445-32ACF419977E}"
+EndProject
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "MsiPackage4", "MsiPackage4\MsiPackage4.wixproj", "{A13BC3F9-A166-7F07-E75D-E0D5DAB014C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +35,22 @@ Global
 		{0E5BF176-18FE-4282-8B4B-815EFA2233ED}.Debug|x64.Build.0 = Debug|x64
 		{0E5BF176-18FE-4282-8B4B-815EFA2233ED}.Release|x64.ActiveCfg = Release|x64
 		{0E5BF176-18FE-4282-8B4B-815EFA2233ED}.Release|x64.Build.0 = Release|x64
+		{239F81C6-B628-70B8-D333-7F4C350BCA8C}.Debug|x64.ActiveCfg = Debug|x64
+		{239F81C6-B628-70B8-D333-7F4C350BCA8C}.Debug|x64.Build.0 = Debug|x64
+		{239F81C6-B628-70B8-D333-7F4C350BCA8C}.Release|x64.ActiveCfg = Release|x64
+		{239F81C6-B628-70B8-D333-7F4C350BCA8C}.Release|x64.Build.0 = Release|x64
+		{319DCAC2-5425-BBD7-2486-1AC1F72CE3E4}.Debug|x64.ActiveCfg = Debug|x64
+		{319DCAC2-5425-BBD7-2486-1AC1F72CE3E4}.Debug|x64.Build.0 = Debug|x64
+		{319DCAC2-5425-BBD7-2486-1AC1F72CE3E4}.Release|x64.ActiveCfg = Release|x64
+		{319DCAC2-5425-BBD7-2486-1AC1F72CE3E4}.Release|x64.Build.0 = Release|x64
+		{FE377B5F-B56B-92AD-8445-32ACF419977E}.Debug|x64.ActiveCfg = Debug|x64
+		{FE377B5F-B56B-92AD-8445-32ACF419977E}.Debug|x64.Build.0 = Debug|x64
+		{FE377B5F-B56B-92AD-8445-32ACF419977E}.Release|x64.ActiveCfg = Release|x64
+		{FE377B5F-B56B-92AD-8445-32ACF419977E}.Release|x64.Build.0 = Release|x64
+		{A13BC3F9-A166-7F07-E75D-E0D5DAB014C1}.Debug|x64.ActiveCfg = Debug|x64
+		{A13BC3F9-A166-7F07-E75D-E0D5DAB014C1}.Debug|x64.Build.0 = Debug|x64
+		{A13BC3F9-A166-7F07-E75D-E0D5DAB014C1}.Release|x64.ActiveCfg = Release|x64
+		{A13BC3F9-A166-7F07-E75D-E0D5DAB014C1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
