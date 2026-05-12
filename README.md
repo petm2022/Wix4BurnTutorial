@@ -1,27 +1,5 @@
-# Custom Bootstrapper for WiX v4 Burn Tutorial
+# Custom Bootstrapper for demonstrating a cancel problem in Burn
 
-Welcome to this tutorial on using Burn in WiX 4 to build a software installation bundle with your own custom .NET bootstrapper application. It includes two working solutions, one targeting .NET 4.6.2 and another for .NET 8.0.
+The project contains a custom bootstrapper and 4 msi packages. The three last packages are non-vital, and if the installation is cancelled during one of those, the installation will not roll back.
 
-## WiX 5
-
-The tutorial has been updated to demonstrate the changes needed to support a bootstrapper application for WiX 5.
-
-[This entry](https://github.com/rsmart8452/Wix4BurnTutorial/wiki/Wix-5) in the wiki covers the small changes you'll want to be aware of. For the most part, the v4 tutorial applies to v5.
-
-## Audience
-
-This is for intermediate to advanced .NET and WiX users. You should also have a basic understanding of the workings of Windows Installer and the databases (MSI files) it uses to deploy software.
-
-## How to Use the Tutorial
-
-[The wiki](https://github.com/rsmart8452/Wix4BurnTutorial/wiki) covers concepts and provides a code walkthrough.
-
-This repo includes both .NET Framework and .NET Core solutions. Each of the important source files have accompanying pages in the wiki which go into much more detail than can be reasonably be provided in code comments.
-
-For an organized walkthrough, the wiki provides navigation links at the bottom of each page. Starting with the [Home](https://github.com/rsmart8452/Wix4BurnTutorial/wiki) page, following these links will guide the reader through building their own bundle.
-
-## How to Build the Sample Solutions
-
-There is no build script. Open either _Framework\Framework.sln_ or _Core\Core.sln_ in Visual Studio and build.
-
-A [Windows Sandbox configuration](https://github.com/rsmart8452/Wix4BurnTutorial/wiki/Windows-Sandbox-Configuration) is provided so the installers can be run without affecting your development environment.
+If the last package is changed to be vital, the installation will roll back if the installation is cancelled during one of the non-vital packages.
